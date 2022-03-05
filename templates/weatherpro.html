@@ -1,0 +1,48 @@
+{% extends 'base.html' %} {% block navigation %}
+<li><a href="/">Weather</a></li>
+<li class="active"><a href="/weatherpro" class="active">WeatherPRO</a></li>
+<li><a href="/contact">Contact Us</a></li>
+{% endblock %} {% block content %}
+
+<div class="city-wrapper">
+  <div class="form-wrapper">
+    <form action="/weatherpro" method="POST" class="form-pro">
+      <input
+        type="search"
+        name="new_city_name"
+        placeholder="Choose any location..."
+      />
+      <input type="submit" value="Add city" />
+    </form>
+  </div>
+
+  {% for city in cities %}
+
+  <div class="pro-city-block">
+    <div class="pro-city-info">
+      <h3 class="city-name">{{city.name}}</h3>
+      <p class="city-date">{{date}}</p>
+    </div>
+    <div class="pro-city-weather">
+      <!-- <img src="http://openweathermap.org/img/wn/{{city.icon}}@2x.png" alt="weather icon" class="city-weather-icon"> -->
+      <div class="img-container-pro">
+        <img
+          src="/static/img/weath-icons/{{ city.icon }}.svg"
+          alt="weather icon"
+          class="city-weather-icon-pro"
+        />
+      </div>
+      <p class="city-weather-temp city-weather-temp-pro">{{city.temp}}°</p>
+      <p class="city-weather-description city-weather-description-pro">
+        {{city.description}}
+      </p>
+      <div class="delete-btn">
+        <a href="/weatherpro/delete/{{city.id}}">x</a>
+      </div>
+    </div>
+  </div>
+
+  {% endfor %}
+</div>
+
+{% endblock %}

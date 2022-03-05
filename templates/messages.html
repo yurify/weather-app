@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block navigation %}
+<li><a href="/">Weather</a></li>
+<li><a href="/weatherpro">WeatherPRO</a></li>
+<li><a href="/contact">Contact Us</a></li>
+{% endblock %}
+
+{% block content %}
+
+<table>
+    <tr>
+        <th>id</th>
+        <th>name</th>
+        <th>email</th>
+        <th>text</th>
+        <th></th>
+    </tr>
+
+    {% for user in users %}
+    <tr>
+        <td>{{user.id}}</td>
+        <td>{{user.name}}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.text}}</td>
+        <td><a href="/check-messages/delete/{{user.id}}">Delete</a></td>
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}

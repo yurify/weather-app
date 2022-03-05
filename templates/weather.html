@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block navigation %}
+<li><a href="/" class="active">Weather</a></li>
+<li><a href="/weatherpro" >WeatherPRO</a></li>
+<li><a href="/contact">Contact Us</a></li>
+{% endblock %}
+
+{% block content %}
+
+<div class="container-weather">
+    <div class="info-left">
+        <div class="city-info">
+            <h3 class="city-name">{{ weather_data.city_name }}</h3>
+            <p class="city-date">{{ date }}</p>
+            <div class="city-weather">
+                <div>
+                    <p class="city-weather-description">{{ weather_data.description }}</p>
+                    <p class="city-weather-temp">{{ weather_data.temp }}&#176;</p>
+                </div>
+                <img src="/static/img/weath-icons/{{ weather_data.icon_code }}.svg" alt="weather icon" class="city-weather-icon">
+                <!-- <img src="http://openweathermap.org/img/wn/{{ weather_data.icon_code }}@2x.png" alt="weather icon" class="city-weather-icon"> -->
+                <!-- weather icons provided by https://www.amcharts.com/free-animated-svg-weather-icons/ and https://bas.dev/projects/weather-icons -->
+            </div>
+
+            
+            <!-- button for a different city -->
+            <div class='change-city-btn'>
+                {% if weather_data.city_name == 'VIENNA' %}
+                <a href="/lviv" class="button">Change city: Lviv</a>
+                {% else %}
+                <a href="/vienna" class="button">Change city: Vienna</a>
+                {% endif %}
+            </div>
+        
+
+        </div>
+
+    </div>
+
+    <div class="photo-right">
+        <div class="img-wrapper">
+            <img src="{{ weather_data.photo }}" alt="City photo" class="city-photo">
+        </div>
+    </div>
+</div>
+
+{% endblock %}

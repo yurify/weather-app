@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block navigation %}
+<li><a href="/" >Weather</a></li>
+<li><a href="/weatherpro">WeatherPRO</a></li>
+<li><a href="/contact" class="active">Contact Us</a></li>
+{% endblock %}
+
+{% block content %}
+
+<div class="contact-form-wrapper">
+    <div class="form-title">
+        <p>CONTACT US</p>
+    </div>
+    <form action="/contact" method="POST" class="contact-form">
+        {{ template_form.hidden_tag() }}
+        {{ template_form.message_name(placeholder="Enter your name") }}
+        {{ template_form.message_email(placeholder="Enter a valid e-mail address") }}
+        {{ template_form.message_text(placeholder="Enter your message") }}
+        {{ template_form.message_submit() }}
+
+        <div class="contact-weather-img">
+            <img src="/static/img/weath-icons/weather.svg" alt="Weather image">
+        </div>
+    </form>
+
+
+</div>
+
+{% endblock %}

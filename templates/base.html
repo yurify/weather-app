@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/style.css">
+    <title>Weather</title>
+    <!-- <link rel="icon" type="image/x-icon" href="../static/img/favicon.svg"> -->
+    <script src="../static/script.js" defer></script>
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <a href="/">WEATHER</a>
+        </div>
+        <div class="burger-icon">
+            &#9776;
+        </div>
+        <ul class="menu">
+            {% block navigation %}
+
+            {% endblock %}
+        </ul>
+    </nav>
+    {% block content %}
+    {% endblock %}
+</body>
+</html>

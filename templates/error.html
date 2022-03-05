@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block navigation %}
+<li><a href="/">Weather</a></li>
+<li><a href="/weatherpro" class="active">WeatherPRO</a></li>
+<li><a href="/contact">Contact Us</a></li>
+{% endblock %}
+
+{% block content %}
+
+<div class="bar error">
+    <p>There was an error adding the city: <b>{{new_city_name}}</b>. Please make sure that:</p>
+    <ul>
+        <li>- the city exists</li>
+        <li>- the city hasn't been added to the list yet</li>
+    </ul>
+    <br>
+    <a href="/weatherpro">Back to cities</a>
+</div>
+
+{% endblock %}

@@ -1,0 +1,661 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=PT+Serif:wght@700&family=Readex+Pro:wght@300&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #f2f6fa;
+  height: 100vh;
+}
+
+/* style nav bar */
+
+nav {
+  background-color: #88a9c3;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 10%;
+  font-size: 1.1vw;
+}
+
+.logo {
+  padding-left: 5vw;
+  font-family: "PT Serif", serif;
+  position: relative;
+}
+
+.logo a {
+  text-decoration: none;
+  font-size: 2.2em;
+  color: black;
+}
+
+.logo a:visited {
+  color: black;
+}
+
+.burger-icon {
+  display: none;
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+}
+
+nav li {
+  display: inline;
+  padding-right: 4em;
+}
+
+nav li a {
+  text-decoration: none;
+  font-size: 1.7em;
+  font-family: "Open Sans", sans-serif;
+  font-weight: normal;
+  color: black;
+}
+
+nav a:visited {
+  color: black;
+}
+
+nav li .active {
+  color: #f4ce85;
+  font-weight: bold;
+}
+
+nav li a:hover {
+  font-weight: bold;
+}
+
+/* nav bar ended */
+
+/* weather main page */
+
+.container-weather {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+
+  height: 90%;
+}
+
+.info-left,
+.photo-right {
+  width: 50%;
+  height: 100%;
+}
+
+.info-left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.city-info {
+  width: 60%;
+}
+
+.city-name {
+  font-family: "PT Serif", serif;
+  font-size: 3vw;
+  color: #345e7d;
+}
+
+.city-date {
+  font-family: "Open Sans", sans-serif;
+  font-size: 2vw;
+}
+
+.city-weather {
+  padding-top: 3em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.city-weather-description {
+  font-family: "Open Sans", sans-serif;
+  font-size: 2vw;
+  padding-bottom: 0.5em;
+}
+
+.city-weather-temp {
+  font-family: "Open Sans", sans-serif;
+  font-size: 5em;
+  color: #345e7d;
+  border-radius: 20px;
+}
+
+.city-weather-icon {
+  margin-left: 1vw;
+  width: 17vw;
+  height: 17vw;
+}
+
+.img-wrapper {
+  width: 93%;
+  height: 100%;
+}
+
+.city-photo {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.button {
+  color: #345e7d;
+  background-color: white;
+  text-decoration: none;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.6em;
+  border: 1px solid #345e7d;
+  border-radius: 10px;
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin-top: 2vh;
+  padding: 2vw 0;
+  box-shadow: 1px 1px 2px gray;
+}
+
+.button:hover {
+  border: 2px solid #53e3eb;
+}
+
+/* weatherPRO page  */
+
+.city-wrapper {
+  background-image: url("/static/img/vienna-roof.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  min-height: 90vh;
+}
+
+.city-wrapper {
+  position: relative;
+}
+
+.form-wrapper {
+  height: 15vw;
+  width: 100%;
+}
+
+.form-pro {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.form-pro input[type="search"] {
+  width: 50%;
+  padding: 1em 1em;
+  margin: 2.5em 0;
+  font-size: 1.5vw;
+  border: 1px solid #88a9c3;
+  border-radius: 20px;
+  height: 5vw;
+}
+
+.form-pro input[type="search"]:focus-visible {
+  outline: 1px solid #53e3eb;
+  border: none;
+}
+
+.form-pro input[type="submit"] {
+  margin: 2.5em 1em;
+  background-color: white;
+  font-size: 2vw;
+  border: 1px solid #88a9c3;
+  cursor: pointer;
+  border-radius: 20px;
+  color: #88a9c3;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  height: 5vw;
+  width: 13vw;
+}
+
+.form-pro input[type="submit"]:hover {
+  background-color: #88a9c3;
+  color: white;
+}
+
+.pro-city-block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.9);
+  height: 20vh;
+  width: 100%;
+  margin: 1em 0;
+}
+
+.pro-city-info {
+  padding-right: 50px;
+  width: 25%;
+}
+
+.img-container-pro {
+  width: 20%;
+  height: 100%;
+}
+
+.city-weather-icon-pro {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.pro-city-weather {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+}
+
+.city-weather-temp-pro {
+  font-size: 3vw;
+  border-radius: 10px;
+  margin-left: 15px;
+  padding: 1vw 4vw;
+}
+
+.city-weather-description-pro {
+  padding-left: 2em;
+}
+
+.delete-btn {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1rem;
+  background-color: transparent;
+  align-self: flex-start;
+  padding-top: 1vw;
+  padding-left: 1vw;
+}
+.delete-btn a {
+  text-decoration: none;
+  color: #345e7d;
+}
+
+.delete-btn a:hover {
+  color: red;
+  cursor: pointer;
+}
+
+/* error message */
+.bar {
+  padding: 10px;
+  margin: 10px;
+  color: #333;
+  background: #fafafa;
+  border: 1px solid #ccc;
+  text-align: center;
+  width: 50%;
+  margin: auto;
+  margin-top: 2em;
+  font-family: "Open Sans", sans-serif;
+  font-weight: normal;
+}
+
+.error {
+  color: #ba3939;
+  background: #ffe0e0;
+  border: 1px solid #a33a3a;
+  text-decoration: none;
+}
+
+.error ul {
+  list-style-type: none;
+}
+
+/* contact form page */
+
+.contact-form-wrapper {
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #edeef1;
+}
+
+.form-title {
+  font-family: "PT Serif", serif;
+  font-size: 2.6em;
+  color: #6da7cc;
+}
+
+.contact-form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+
+.contact-form input,
+.contact-form textarea {
+  margin-top: 1.5em;
+  width: 500px;
+  border: none;
+  font-size: 16px;
+  font-family: "Open Sans", sans-serif;
+}
+
+.contact-form input:focus-visible,
+.contact-form textarea:focus-visible {
+  border: none;
+  outline: 1px solid #53e3eb;
+}
+
+.contact-form input {
+  padding: 1em 0;
+  border-radius: 5px;
+  padding-left: 10px;
+}
+
+.contact-form textarea {
+  resize: none;
+  border-radius: 5px;
+  height: 150px;
+  padding-left: 10px;
+  padding-top: 10px;
+}
+
+.contact-form input[type="submit"] {
+  background-color: #6da7cc;
+  color: #f2f6fa;
+  font-size: 24px;
+  width: 300px;
+  padding: 15px 0;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.contact-form input[type="submit"]:hover {
+  opacity: 0.9;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #345e7d;
+  text-align: center;
+  font-size: 18px;
+  opacity: 0.7;
+  font-family: "Open Sans", sans-serif;
+}
+
+.contact-form textarea::placeholder {
+  padding-top: 10px;
+}
+
+.contact-weather-img {
+  position: absolute;
+  bottom: 1px;
+  left: 25px;
+  display: none;
+  transition: display 5s;
+}
+
+.contact-form input[type="submit"]:hover + .contact-weather-img {
+  display: block;
+}
+
+/* for tables */
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td,
+th {
+  border: 1px solid #cfdde4;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #cfdde4;
+}
+
+/* @media only screen and (max-width: 1150px) {
+
+    nav {
+        font-size: 1.4vw;
+    }
+
+    .city-name {
+        font-size: 4vw;
+    }
+
+    .city-date {
+        font-size: 2.7vw;
+    }
+
+    .city-weather-description {
+        font-size: 2.7vw;
+    }
+
+    .city-weather-temp {
+        font-size: 6vw;
+    }
+    
+    .button {
+        font-size: 2.5vw;
+    }
+
+} */
+
+@media only screen and (max-width: 768px) {
+  /* Weather home page */
+
+  .burger-icon {
+    display: inline;
+    font-size: 7vw;
+    cursor: pointer;
+  }
+
+  .logo,
+  .burger-icon {
+    align-self: flex-start;
+    padding: 0 5vw;
+  }
+
+  nav {
+    height: auto;
+    font-size: 3vw;
+  }
+
+  nav,
+  nav ul {
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: #88a9c3;
+    width: 100%;
+    margin-bottom: 0vw;
+    padding: 1vw 0;
+  }
+
+  .menu {
+    display: none;
+    flex-direction: column;
+  }
+
+  nav li {
+    padding: 5px 0;
+  }
+
+  .container-weather {
+    flex-direction: column;
+    justify-content: space-around;
+    height: auto;
+  }
+
+  .info-left,
+  .photo-right {
+    width: 100%;
+    height: auto;
+    padding-top: 4vw;
+  }
+
+  .city-info {
+    width: 65%;
+    padding: 2vw 0;
+  }
+
+  .city-weather {
+    justify-content: space-around;
+    padding-top: 5vw;
+  }
+
+  .img-wrapper {
+    width: 100%;
+  }
+
+  .img-container-pro {
+    width: 50%;
+  }
+
+  /* font size */
+  .city-name {
+    font-size: 5vw;
+  }
+
+  .city-date {
+    display: none;
+  }
+
+  .city-weather-description {
+    font-size: 4.7vw;
+  }
+
+  .city-weather-temp {
+    font-size: 7vw;
+    width: 10vw;
+  }
+
+  .city-weather-icon {
+    width: 25vw;
+    height: 25vw;
+  }
+
+  .button {
+    font-size: 3.5vw;
+  }
+
+  /* Weather pro page */
+
+  .form-wrapper {
+    height: 40vw;
+  }
+
+  .form-pro {
+    flex-direction: column;
+  }
+
+  .form-pro input[type="search"],
+  .form-pro input[type="submit"] {
+    margin: 0;
+    width: 80vw;
+    margin-top: 4vw;
+    font-size: 3.7vw;
+    height: 10vw;
+  }
+
+  .city-weather-description-pro {
+    display: none;
+  }
+
+  .pro-city-block {
+    justify-content: center;
+    height: 25vh;
+  }
+
+  .pro-city-info {
+    width: 40%;
+    padding-right: 0;
+  }
+
+  .pro-city-weather {
+    width: 50%;
+  }
+
+  /* Contact us page */
+
+  .contact-form-wrapper {
+    height: auto;
+    padding: 7vw 0;
+  }
+
+  .form-title {
+    font-size: 5vw;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    width: 80vw;
+    font-size: 3vw;
+  }
+
+  .contact-form input[type="submit"]:hover + .contact-weather-img {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  nav {
+    padding: 3vw 0;
+  }
+
+  /* Weather pro page */
+
+  .form-pro input[type="search"],
+  .form-pro input[type="submit"] {
+    font-size: 4.5vw;
+    height: 13vw;
+  }
+  .city-name {
+    font-size: 10vw;
+    text-align: center;
+  }
+
+  .pro-city-block {
+    flex-direction: column;
+    height: 45vw;
+  }
+
+  .pro-city-info {
+    width: 90%;
+  }
+
+  .pro-city-weather {
+    width: 90%;
+    height: 60%;
+    justify-content: center;
+  }
+
+  .contact-form input[type="submit"] {
+    width: 80vw;
+    font-size: 5vw;
+  }
+
+  .contact-form input::placeholder,
+  .contact-form textarea::placeholder {
+    font-size: 4vw;
+  }
+}
